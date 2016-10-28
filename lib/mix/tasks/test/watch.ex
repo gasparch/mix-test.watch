@@ -53,7 +53,7 @@ defmodule Mix.Tasks.Test.Watch do
   defp run_tests(config) do
     maybe_clear(config)
     IO.puts "\nRunning tests..."
-    :ok = config |> Command.build |> Shell.exec
+    :ok = config |> Command.build |> Shell.exec(config)
     Message.flush
     :ok
   end
